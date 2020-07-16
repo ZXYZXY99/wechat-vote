@@ -1,9 +1,8 @@
 <template>
-    <a-layout id="components-layout-demo-fixed">
-      <a-layout-header class="heder" style="background: transparent">
-        <div class="logo" />
-        xxx投票
-
+  <div id="components-layout-demo-basic" >
+    <a-layout>
+      <a-layout-header>
+        TingTao投票
         <div class="dropdown">
           <a-dropdown >
             <a class="ant-dropdown-link" @click="e => e.preventDefault()">
@@ -27,66 +26,91 @@
           </a-dropdown>
 
         </div>
+
       </a-layout-header>
-
-
-
-      <a-layout-content :style="{ padding: '0 50px', marginTop: '64px'  }">
+      <a-layout-content  >
         <router-view></router-view>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
-        TingTao Vote ©2020 Created by cj
-      </a-layout-footer>
+      <a-layout-footer class="footer">TingTao Vote ©2020 Created by cj</a-layout-footer>
     </a-layout>
+  </div>
 </template>
-
-
-
 <script>
-// @ is an alias to /src
+  export default {
+    data(){
+      return{
+        defaultHeight: {
+          height: ""
+        }
 
+      }
+    },
+    methods: {
+      getHeight() {
+        this.defaultHeight.height = window.innerHeight - 90 + "px";
+      }
 
-export default {
-  name: 'Home',
-  data(){
-    return{
-
-
-
+    },created() {
+      window.addEventListener("resize", this.getHeight);
+      this.getHeight();
     }
-  },created() {
+  };
+</script>
 
+<style>
 
-  },methods:{
-
-
-
-
+  html,body,#root{
+    width: 100%;
+    height: 100%;
+  }
+  .ant-layout{
+    height: 100%;
   }
 
-}
-</script>
-<style scoped>
+
+  #components-layout-demo-basic {
+    text-align: center;
+  }
+  #components-layout-demo-basic .ant-layout-header,
+  #components-layout-demo-basic .ant-layout-footer {
+    background: #7dbcea;
+    /*color: #fff;*/
+  }
+  #components-layout-demo-basic .ant-layout-footer {
+    line-height: 1.5;
+  }
+  #components-layout-demo-basic .ant-layout-sider {
+    background: #3ba0e9;
+    color: #fff;
+    line-height: 120px;
+  }
+  #components-layout-demo-basic .ant-layout-content {
+    /*background: rgba(16, 142, 233, 1);*/
+    color: #fff;
+    min-height: 120px;
+    line-height: 120px;
+  }
+  #components-layout-demo-basic > .ant-layout {
+    margin-bottom: 48px;
+  }
+  #components-layout-demo-basic > .ant-layout:last-child {
+    margin: 0;
+  }
   .dropdown{
     float: right;
   }
 
-  .bg-context{
-    padding: 10px;
-    height: 90%;
-  }
-  #components-layout-demo-fixed .logo {
-    width: 120px;
-    height: 31px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px 24px 16px 0;
-    float: left;
-  }
-  #components-layout-demo-fixed{
-    height: 100%;
+  .footer{
+
+    height: 50px;
+
     width: 100%;
-  }
-  .heder{
-    /*background-color: aqua;*/
+
+    background-color: #ddd;
+
+    position: fixed;
+
+    bottom: 0;
+
   }
 </style>

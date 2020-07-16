@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Test from "../views/Test";
 import Vote from '../views/vote'
 import QueckStar from '../views/QueckStar'
+import Vote_Result from '../views/Vote_Result'
+import Vote_TP from '../views/Vote_TP'
 
 Vue.use(VueRouter)
 
@@ -24,7 +26,16 @@ Vue.use(VueRouter)
         path:'/quackstar',
         name:'投票页',
         component:QueckStar
+      },{
+        path:'/result',
+        name:'结果',
+        component:Vote_Result
+      },{
+      path:'/vote_tp',
+        name:'开始投票',
+        component:Vote_TP
       }
+
     ]
   },
   {

@@ -4,7 +4,7 @@
                 <div class="queckstar" v-show="show">
                     <div class="txt">
                         <p style="color: #42b983">TingTao投票</p>
-                        <p style="font-size: 30px">#免费易用的投票网站</p>
+                        <p style="font-size: 30px;color: black">#免费易用的投票网站</p>
                         <br>
                         <br>
                         <p style="color: #42b983">TingTao vote</p>

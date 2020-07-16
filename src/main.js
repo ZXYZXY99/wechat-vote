@@ -6,7 +6,8 @@ import store from './store'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 import './plugins/element.js'
-
+import VCharts from 'v-charts'
+Vue.use(VCharts)
 Vue.use(Antd)
 
 
