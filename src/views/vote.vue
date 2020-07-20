@@ -9,12 +9,12 @@
         >
             <el-input v-model="dynamicValidateForm.email"></el-input>
 
-            可选择选项数量:<el-input-number v-model="dynamicValidateForm.num" @change="handleChange" :min="1"
-                                    :max="10"
-                              label="描述文字"></el-input-number>
-            投票持续天数<el-input-number v-model="relform.day" @change="handleChange" :min="1"
-                                    :max="10"
-                                    label="描述文字"></el-input-number>
+<!--            可选择选项数量:<el-input-number v-model="dynamicValidateForm.num" @change="handleChange" :min="1"-->
+<!--                                    :max="10"-->
+<!--                              label="描述文字"></el-input-number>-->
+<!--            投票持续天数<el-input-number v-model="relform.day" @change="handleChange" :min="1"-->
+<!--                                    :max="10"-->
+<!--                                    label="描述文字"></el-input-number>-->
 
 
         </el-form-item>
@@ -70,7 +70,7 @@
                 console.log(this.relform.domain+"Test")
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        this.axios.post('http://localhost:9091/voteservice/vote-info/addvote',
+                        this.axios.post('http://localhost:9090/voteservice/voteservice/vote-info/addvote',
                             _this.relform) .then(function (resp) {
                                 if (resp.data.code=10000){
                                     _this.$message.info("创建成功")

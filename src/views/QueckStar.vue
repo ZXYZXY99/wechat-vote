@@ -40,7 +40,7 @@
         },
         methods:{
             jump(){
-                this.$router.push("/vote")
+                this.$router.push("/login")
             },
 
 

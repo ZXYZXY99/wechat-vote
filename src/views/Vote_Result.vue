@@ -1,5 +1,31 @@
 <template>
     <div>
+        <div class="dropdown">
+            <a-dropdown >
+                <a class="ant-dropdown-link" @click="e => e.preventDefault()">
+                    <a-button icon="user" >
+                        <!--              <a-icon type="down" />-->
+                    </a-button>
+                </a>
+                <a-menu slot="overlay">
+                    <a-menu-item>
+                        <a-button @click="jumpUsercenter()" >
+                            用户中心
+                        </a-button>
+                    </a-menu-item>
+
+                    <a-menu-item>
+                        <a-button >
+                            退出登陆
+                        </a-button>
+                    </a-menu-item>
+                </a-menu>
+            </a-dropdown>
+
+        </div>
+
+
+
         <p style="color: black;">{{this.voteinfo.votename}}</p>
 
 
@@ -52,7 +78,7 @@
              var code=cs.split('=')[1]
             const _this=this;
             // console.log(code+'asdasd')
-            this.axios.get('http://localhost:9091/voteservice/vote-info/getInfo',{params:{
+            this.axios.get('http://localhost:9090/voteservice/voteservice/vote-info/getInfoRsu',{params:{
                 id: code
                 }}).then(function
                 (resp) {
@@ -62,6 +88,13 @@
                 console.log(_this.chartData_histogram.columns)
                 _this.voteOption=resp.data.data[1];
             })
+
+
+        },methods:{
+            jumpUsercenter(){
+                this.$router.push('/usercenter')
+
+            }
 
 
         }

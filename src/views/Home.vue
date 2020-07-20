@@ -3,33 +3,12 @@
     <a-layout>
       <a-layout-header>
         TingTao投票
-        <div class="dropdown">
-          <a-dropdown >
-            <a class="ant-dropdown-link" @click="e => e.preventDefault()">
-              <a-button icon="unordered-list"  >
-                <!--              <a-icon type="down" />-->
-              </a-button>
-            </a>
-            <a-menu slot="overlay">
-              <a-menu-item>
-                <a-button >
-                  主页
-                </a-button>
-              </a-menu-item>
+<!--        <a-avatar style="backgroundColor:#87d068;float: right" icon="user" />-->
 
-              <a-menu-item>
-                <a-button >
-                  主页
-                </a-button>
-              </a-menu-item>
-            </a-menu>
-          </a-dropdown>
-
-        </div>
 
       </a-layout-header>
-      <a-layout-content  >
-        <router-view></router-view>
+      <a-layout-content style="background-color:rgba(255,255,255,0.6)">
+        <router-view style="background-color:rgba(255,255,255,0.6)"></router-view>
       </a-layout-content>
       <a-layout-footer class="footer">TingTao Vote ©2020 Created by cj</a-layout-footer>
     </a-layout>
@@ -96,9 +75,7 @@
   #components-layout-demo-basic > .ant-layout:last-child {
     margin: 0;
   }
-  .dropdown{
-    float: right;
-  }
+
 
   .footer{
 
